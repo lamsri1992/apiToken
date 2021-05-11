@@ -21,7 +21,7 @@ class labController extends Controller
         $result = DB::table('covid_copy2')
                 ->select('cid', 'fname', 'address', 'tel')
                 ->where('cid', $id)
-                ->first();
+                ->get();
         return Response::json([
                     '_data' => $result
                 ], 200);
